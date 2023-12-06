@@ -9,14 +9,18 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         int randomNumber = rand.nextInt(100)+1;  // without +1 would be between 0 and 99
+
+        int tryCount = 0;
+
         while(true) {
 
             System.out.println("Enter your guess between 1 and 100:");
 
             int playerGuess = scanner.nextInt();
+            tryCount ++;
 
             if (playerGuess == randomNumber) {
-                System.out.println("Correct! You win!");
+                System.out.println("Correct! You win! It took you " + tryCount + " tries. Well done!");
                 break;
             }
 
