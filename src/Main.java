@@ -7,23 +7,29 @@ public class Main {
 
         Random rand = new Random();
         Scanner scanner = new Scanner(System.in);
+
         int randomNumber = rand.nextInt(100)+1;  // without +1 would be between 0 and 99
-        System.out.println("Enter your guess!");
+        while(true) {
 
-        int playerGuess = scanner.nextInt();
+            System.out.println("Enter your guess between 1 and 100:");
 
-        if(playerGuess == randomNumber) {
-            System.out.println("Correct! You win!");
+            int playerGuess = scanner.nextInt();
+
+            if (playerGuess == randomNumber) {
+                System.out.println("Correct! You win!");
+                break;
+            }
+
+            else if (randomNumber > playerGuess) {
+                System.out.println("The number is larger than your guess.");
+            }
+
+            else {
+                System.out.println("The number is smaller than your guess.");
+            }
+
         }
-        else if(randomNumber > playerGuess) {
-            System.out.println("The number is larger than your guess.");
-        }
-        else if(randomNumber < playerGuess) {
-            System.out.println("The number is smaller than your guess.");
-        }
-        else {
-            System.out.println("Sorry, something went wrong.");
-        }
+
 
 
 
